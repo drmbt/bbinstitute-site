@@ -7,7 +7,7 @@ function TeamGrid({ members }: { members: TeamMember[] }) {
       {members.map((member) => (
         <article key={`${member.name}-${member.bio}`} className="surface-card space-y-3">
           <h3 className="text-xl font-semibold text-stone-50">{member.name}</h3>
-          {member.role ? <p className="text-sm text-amber-200">{member.role}</p> : null}
+          {member.role ? <p className="text-sm text-orange-300">{member.role}</p> : null}
           <p className="text-sm leading-7 text-stone-300">{member.bio}</p>
         </article>
       ))}

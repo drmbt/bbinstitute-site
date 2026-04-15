@@ -22,7 +22,7 @@ function TeamGrid({ members }: { members: TeamMember[] }) {
       {members.map((member) => (
         <article key={`${member.name}-${member.bio}`} className="surface-card space-y-3">
           <h3 className="text-xl font-semibold text-stone-50">{member.name}</h3>
-          {member.role ? <p className="text-sm text-amber-200">{member.role}</p> : null}
+          {member.role ? <p className="text-sm text-orange-300">{member.role}</p> : null}
           <p className="text-sm leading-7 text-stone-300">{member.bio}</p>
         </article>
       ))}
@@ -40,7 +40,7 @@ export default function Home() {
             <h1 className="max-w-4xl text-5xl font-semibold tracking-tight text-stone-50 sm:text-6xl lg:text-7xl">
               {hero.title}
             </h1>
-            <p className="max-w-2xl text-xl text-amber-100/90">{hero.subtitle}</p>
+            <p className="max-w-2xl text-xl text-orange-100/90">{hero.subtitle}</p>
             <p className="max-w-3xl text-lg leading-8 text-stone-300">{hero.intro}</p>
           </div>
           <div className="flex flex-wrap gap-4">
@@ -52,9 +52,9 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div className="surface-card mt-8 flex max-h-[100svh] flex-col justify-between gap-5 bg-gradient-to-br from-amber-200/10 via-white/[0.06] to-transparent md:hidden">
+        <div className="surface-card mt-8 flex max-h-[100svh] flex-col justify-between gap-5 bg-gradient-to-br from-orange-300/15 via-white/[0.06] to-transparent md:hidden">
           <div className="space-y-4">
-            <p className="text-xs uppercase tracking-[0.35em] text-amber-200/80">Year X</p>
+            <p className="text-xs uppercase tracking-[0.35em] text-orange-300/85">Year X</p>
             <p className="text-sm leading-6 text-stone-300">
               The ten year anniversary of the Biennale. The Institute produces three
               months of free and public programming in Bombay Beach while expanding its
@@ -86,7 +86,7 @@ export default function Home() {
             ))}
           </div>
           <div className="surface-card">
-            <p className="text-sm uppercase tracking-[0.3em] text-amber-200/80">
+            <p className="text-sm uppercase tracking-[0.3em] text-orange-300/85">
               Core principles
             </p>
             <ul className="mt-4 space-y-3 text-base leading-7 text-stone-200">
@@ -117,7 +117,7 @@ export default function Home() {
         </div>
         <div className="surface-card grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="space-y-3">
-            <p className="text-xs uppercase tracking-[0.35em] text-amber-200/80">
+            <p className="text-xs uppercase tracking-[0.35em] text-orange-300/85">
               Year X programs
             </p>
             <h3 className="text-2xl font-semibold text-stone-100">
@@ -160,11 +160,11 @@ export default function Home() {
                     {item.detail}
                   </p>
                 </div>
-                <p className="text-lg font-semibold text-amber-200 lg:text-base">{item.percent}%</p>
+                <p className="text-lg font-semibold text-orange-300 lg:text-base">{item.percent}%</p>
               </div>
               <div className="h-1.5 rounded-full bg-white/10">
                 <div
-                  className="h-1.5 rounded-full bg-amber-300"
+                  className="h-1.5 rounded-full bg-orange-400"
                   style={{ width: `${item.percent}%` }}
                 />
               </div>
@@ -185,7 +185,7 @@ export default function Home() {
         <div className="grid gap-5 lg:grid-cols-3">
           {origin.cards.map((card) => (
             <article key={card.title} className="surface-card space-y-4">
-              <p className="text-xs uppercase tracking-[0.35em] text-amber-200/80">
+              <p className="text-xs uppercase tracking-[0.35em] text-orange-300/85">
                 {card.title}
               </p>
               <p className="text-base leading-8 text-stone-300">{card.body}</p>
@@ -207,7 +207,7 @@ export default function Home() {
             <article key={item.year} className="surface-card px-4 py-3 xl:px-3.5 xl:py-3">
               <div className="flex flex-wrap items-baseline justify-between gap-1.5">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.35em] text-amber-200/80">
+                  <p className="text-xs uppercase tracking-[0.35em] text-orange-300/85">
                     {item.label}
                   </p>
                   <h3 className="mt-0.5 text-xl font-semibold text-stone-50 xl:text-lg">
@@ -234,7 +234,7 @@ export default function Home() {
       >
         <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="surface-card space-y-4">
-            <p className="text-xs uppercase tracking-[0.35em] text-amber-200/80">
+            <p className="text-xs uppercase tracking-[0.35em] text-orange-300/85">
               Experiments in
             </p>
             <ul className="space-y-3 text-lg text-stone-100">
@@ -305,28 +305,28 @@ export default function Home() {
         <div className="grid gap-10">
           <div className="space-y-5">
             <div className="space-y-2">
-              <p className="text-xs uppercase tracking-[0.35em] text-amber-200/80">Co-founders</p>
+              <p className="text-xs uppercase tracking-[0.35em] text-orange-300/85">Co-founders</p>
               <h3 className="text-2xl font-semibold text-stone-100">Core leadership</h3>
             </div>
             <TeamGrid members={coFounders} />
           </div>
           <div className="space-y-5">
             <div className="space-y-2">
-              <p className="text-xs uppercase tracking-[0.35em] text-amber-200/80">Board</p>
+              <p className="text-xs uppercase tracking-[0.35em] text-orange-300/85">Board</p>
               <h3 className="text-2xl font-semibold text-stone-100">Board of directors</h3>
             </div>
             <TeamGrid members={boardDirectors} />
           </div>
           <div className="space-y-5">
             <div className="space-y-2">
-              <p className="text-xs uppercase tracking-[0.35em] text-amber-200/80">Advisors</p>
+              <p className="text-xs uppercase tracking-[0.35em] text-orange-300/85">Advisors</p>
               <h3 className="text-2xl font-semibold text-stone-100">Board of advisors</h3>
             </div>
             <TeamGrid members={advisors} />
           </div>
           <div className="space-y-5">
             <div className="space-y-2">
-              <p className="text-xs uppercase tracking-[0.35em] text-amber-200/80">Origins</p>
+              <p className="text-xs uppercase tracking-[0.35em] text-orange-300/85">Origins</p>
               <h3 className="text-2xl font-semibold text-stone-100">BBB founders</h3>
             </div>
             <TeamGrid members={founders} />
@@ -358,7 +358,7 @@ export default function Home() {
           </div>
         </div>
         <div className="surface-card space-y-5">
-          <p className="text-xs uppercase tracking-[0.35em] text-amber-200/80">Why now</p>
+          <p className="text-xs uppercase tracking-[0.35em] text-orange-300/85">Why now</p>
           <p className="text-base leading-8 text-stone-300">
             Support at this stage does not simply sustain the Biennale. It shapes what
             the Bombay Beach artist movement becomes next: residencies, public
@@ -374,21 +374,21 @@ export default function Home() {
             href={site.contact.website}
             className="surface-card transition hover:border-white/30 hover:bg-white/[0.06]"
           >
-            <p className="text-xs uppercase tracking-[0.35em] text-amber-200/80">Website</p>
+            <p className="text-xs uppercase tracking-[0.35em] text-orange-300/85">Website</p>
             <p className="mt-4 text-lg text-stone-100">bombaybeachinstitute.org</p>
           </Link>
           <Link
             href={`mailto:${site.contact.email}`}
             className="surface-card transition hover:border-white/30 hover:bg-white/[0.06]"
           >
-            <p className="text-xs uppercase tracking-[0.35em] text-amber-200/80">Email</p>
+            <p className="text-xs uppercase tracking-[0.35em] text-orange-300/85">Email</p>
             <p className="mt-4 text-lg text-stone-100">{site.contact.email}</p>
           </Link>
           <Link
             href={site.contact.social}
             className="surface-card transition hover:border-white/30 hover:bg-white/[0.06]"
           >
-            <p className="text-xs uppercase tracking-[0.35em] text-amber-200/80">Social</p>
+            <p className="text-xs uppercase tracking-[0.35em] text-orange-300/85">Social</p>
             <p className="mt-4 text-lg text-stone-100">{site.contact.socialHandle}</p>
           </Link>
         </div>

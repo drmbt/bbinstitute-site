@@ -48,7 +48,7 @@ export default function SupportPage() {
             >
               <div>
                 <h2 className="text-xl font-semibold text-stone-50">{item.name}</h2>
-                <p className="mt-2 text-sm text-amber-200">{item.percent}% of budget</p>
+                <p className="mt-2 text-sm text-orange-300">{item.percent}% of budget</p>
               </div>
               <p className="text-sm leading-7 text-stone-300">{item.detail}</p>
               <p className="text-sm leading-7 text-stone-400">{item.impact}</p>
@@ -67,21 +67,21 @@ export default function SupportPage() {
             href={site.contact.website}
             className="surface-card transition hover:border-white/30 hover:bg-white/[0.06]"
           >
-            <p className="text-xs uppercase tracking-[0.35em] text-amber-200/80">Website</p>
+            <p className="text-xs uppercase tracking-[0.35em] text-orange-300/85">Website</p>
             <p className="mt-4 text-lg text-stone-100">bombaybeachinstitute.org</p>
           </Link>
           <Link
             href={`mailto:${site.contact.email}`}
             className="surface-card transition hover:border-white/30 hover:bg-white/[0.06]"
           >
-            <p className="text-xs uppercase tracking-[0.35em] text-amber-200/80">Email</p>
+            <p className="text-xs uppercase tracking-[0.35em] text-orange-300/85">Email</p>
             <p className="mt-4 text-lg text-stone-100">{site.contact.email}</p>
           </Link>
           <Link
             href={site.contact.social}
             className="surface-card transition hover:border-white/30 hover:bg-white/[0.06]"
           >
-            <p className="text-xs uppercase tracking-[0.35em] text-amber-200/80">Social</p>
+            <p className="text-xs uppercase tracking-[0.35em] text-orange-300/85">Social</p>
             <p className="mt-4 text-lg text-stone-100">{site.contact.socialHandle}</p>
           </Link>
         </div>
