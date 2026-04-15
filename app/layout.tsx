@@ -23,6 +23,18 @@ export const metadata: Metadata = {
   description: site.description,
 };
 
+const themeBootScript = `
+  (function () {
+    try {
+      var stored = localStorage.getItem("theme");
+      var theme = stored === "dark" ? "dark" : "light";
+      document.documentElement.dataset.theme = theme;
+    } catch (e) {
+      document.documentElement.dataset.theme = "light";
+    }
+  })();
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -31,7 +43,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${bodyFont.variable} ${displayFont.variable}`}>
-        <div className="pdf-theme min-h-screen bg-transparent text-stone-100">
+        <script dangerouslySetInnerHTML={{ __html: themeBootScript }} />
+        <div className="theme-scope min-h-screen bg-transparent text-stone-100">
           <Header />
           {children}
           <Footer />

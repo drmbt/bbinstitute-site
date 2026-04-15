@@ -2,6 +2,7 @@
 
 :root {
   color-scheme: light;
+  --bbi-page-bg: #ffffff;
   --bbi-bg: #ffffff;
   --bbi-bg-2: #ffffff;
   --bbi-surface: #ffffff;
@@ -13,6 +14,34 @@
   --bbi-accent-hover: #ab4f25;
   --bbi-border: rgba(85, 64, 50, 0.18);
   --bbi-border-strong: rgba(85, 64, 50, 0.3);
+  --bbi-header-bg: rgba(255, 255, 255, 0.95);
+  --bbi-surface-popover-bg: rgba(255, 255, 255, 0.98);
+  --bbi-link-hover: #c25629;
+  --bbi-hover-bg: rgba(95, 68, 51, 0.06);
+  --bbi-shadow-soft: 0 18px 40px rgba(30, 30, 30, 0.06);
+  --bbi-accent-text: color-mix(in oklab, var(--bbi-accent) 90%, black 10%);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bbi-page-bg: #000;
+  --bbi-bg: #000;
+  --bbi-bg-2: #000;
+  --bbi-surface: #0a0a0a;
+  --bbi-surface-strong: #141414;
+  --bbi-text: #f5f5f5;
+  --bbi-text-muted: #d4d4d4;
+  --bbi-text-soft: #a3a3a3;
+  --bbi-accent: #e48444;
+  --bbi-accent-hover: #f0a46e;
+  --bbi-border: rgba(255, 255, 255, 0.14);
+  --bbi-border-strong: rgba(255, 255, 255, 0.24);
+  --bbi-header-bg: rgba(0, 0, 0, 0.92);
+  --bbi-surface-popover-bg: rgba(10, 10, 10, 0.96);
+  --bbi-link-hover: #ffffff;
+  --bbi-hover-bg: rgba(255, 255, 255, 0.08);
+  --bbi-shadow-soft: 0 20px 80px rgba(0, 0, 0, 0.5);
+  --bbi-accent-text: color-mix(in oklab, var(--bbi-accent) 88%, white 12%);
 }
 
 html {
@@ -20,7 +49,7 @@ html {
 }
 
 body {
-  background: #fff;
+  background: var(--bbi-page-bg);
   color: var(--bbi-text);
   font-family: var(--font-body), Arial, Helvetica, sans-serif;
 }
@@ -83,38 +112,39 @@ a {
 }
 
 .surface-card {
-  @apply rounded-3xl p-6 shadow-[0_18px_40px_rgba(30,30,30,0.06)];
+  @apply rounded-3xl p-6;
   border: 1px solid var(--bbi-border);
-  background: #fff;
+  background: var(--bbi-surface);
+  box-shadow: var(--bbi-shadow-soft);
 }
 
 .surface-card:hover {
   border-color: var(--bbi-border-strong);
 }
 
-.pdf-theme .text-stone-50,
-.pdf-theme .text-stone-100 {
+.theme-scope .text-stone-50,
+.theme-scope .text-stone-100 {
   color: var(--bbi-text) !important;
 }
 
-.pdf-theme .text-stone-200,
-.pdf-theme .text-stone-300 {
+.theme-scope .text-stone-200,
+.theme-scope .text-stone-300 {
   color: var(--bbi-text-muted) !important;
 }
 
-.pdf-theme .text-stone-400 {
+.theme-scope .text-stone-400 {
   color: var(--bbi-text-soft) !important;
 }
 
-.pdf-theme .text-orange-300,
-.pdf-theme .text-orange-300\/85,
-.pdf-theme .text-orange-100\/90 {
-  color: color-mix(in oklab, var(--bbi-accent) 90%, black 10%) !important;
+.theme-scope .text-orange-300,
+.theme-scope .text-orange-300\/85,
+.theme-scope .text-orange-100\/90 {
+  color: var(--bbi-accent-text) !important;
 }
 
-.pdf-theme h1,
-.pdf-theme h2,
-.pdf-theme h3 {
+.theme-scope h1,
+.theme-scope h2,
+.theme-scope h3 {
   line-height: 1.03;
   letter-spacing: 0.02em;
 }

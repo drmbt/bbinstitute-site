@@ -36,19 +36,19 @@ export function MobileSiteMapNav() {
         type="button"
         aria-expanded={open}
         aria-haspopup="true"
-        className="flex cursor-pointer items-center justify-center rounded-full border border-[rgba(85,64,50,0.18)] px-3 py-2 text-xs uppercase tracking-[0.25em] text-stone-200 transition hover:border-[rgba(85,64,50,0.3)] hover:bg-[rgba(95,68,51,0.06)]"
+        className="flex cursor-pointer items-center justify-center rounded-full border border-[var(--bbi-border)] px-3 py-2 text-xs uppercase tracking-[0.25em] text-stone-200 transition hover:border-[var(--bbi-border-strong)] hover:bg-[var(--bbi-hover-bg)]"
         onClick={() => setOpen((o) => !o)}
       >
         Site Map
       </button>
       {open ? (
-        <div className="absolute right-0 top-[calc(100%+0.75rem)] z-50 w-56 rounded-3xl border border-[rgba(85,64,50,0.18)] bg-[rgba(255,255,255,0.98)] p-3 shadow-[0_20px_60px_rgba(80,55,35,0.14)]">
+        <div className="absolute right-0 top-[calc(100%+0.75rem)] z-50 w-56 rounded-3xl border border-[var(--bbi-border)] bg-[var(--bbi-surface-popover-bg)] p-3 shadow-[var(--bbi-shadow-soft)]">
           <nav className="grid gap-2 text-sm text-stone-200">
             {mainNavigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-2xl border border-[rgba(85,64,50,0.18)] px-4 py-3 transition hover:border-[rgba(85,64,50,0.3)] hover:bg-[rgba(95,68,51,0.06)]"
+                className="rounded-2xl border border-[var(--bbi-border)] px-4 py-3 transition hover:border-[var(--bbi-border-strong)] hover:bg-[var(--bbi-hover-bg)]"
                 onClick={() => setOpen(false)}
               >
                 {item.label}
